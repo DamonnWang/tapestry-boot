@@ -17,7 +17,7 @@ public class Index extends BaseComponent {
     private TapestryService tapestryService;
     @Inject
     private AjaxResponseRenderer ajaxResponseRenderer;
-    @Inject
+    @Inject     // 在Spring Component中使用Dubbo注入过之后，在Tapestry组件中也可以直接通过@Inject注入使用了
     private UserService userService;
 
     @Property

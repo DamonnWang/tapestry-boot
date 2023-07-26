@@ -11,12 +11,12 @@ server:
 #    port: -1
 
 # 直连方式
-dubbo:
-  protocol:
-    name: dubbo
-    port: 20888
+#dubbo:
+#  protocol:
+#    name: dubbo
+#    port: 20888
 
 tapestry:
   integration:
-    appmodule: org.example.org.example.tapestry.admin.services.AppModule
+    appmodule: org.example.tapestry.admin.services.AppModule
   production-mode: false
