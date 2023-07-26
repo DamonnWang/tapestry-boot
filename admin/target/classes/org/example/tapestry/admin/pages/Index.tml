@@ -1,6 +1,0 @@
-<html xmlns:t="http://org.example.tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="org.example.tapestry:parameter">
-    <t:zone t:id="indexZone">
-        ${view}
-    </t:zone>
-
-</html>
