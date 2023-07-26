@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: user-service
+server:
+  port: 8101
+#dubbo:
+#  registry:
+#    address: zookeeper://127.0.0.1:2181
+#    protocol: zookeeper
+#  protocol:
+#    port: -1
+
+# 直连方式
+dubbo:
+  protocol:
+    name: dubbo
+    port: 20888

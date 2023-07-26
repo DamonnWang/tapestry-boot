@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: admin-simple
+server:
+  port: 8001
+tapestry:
+  integration:
+    appmodule: org.example.tapestry.simple.services.AppModule
+  production-mode: false
+
+logging:
+  level:
+    org.example.tapestry.starter: debug
