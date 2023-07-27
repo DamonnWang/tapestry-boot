@@ -16,7 +16,6 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
-import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
 import org.springframework.core.Ordered;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MapPropertySource;
@@ -138,13 +137,15 @@ public class TapestryBeanFactoryPostProcessor implements BeanFactoryPostProcesso
         // 将 Tapestry 的 Registry 对象注册为一个可解析的依赖项，使得 Spring 可以使用它
         log.debug("register Tapestry Registry to Spring (Still pending initialization)");
         beanFactory.registerResolvableDependency(Registry.class, registry);
+        // 注入TapestryFilter
+        beanFactory.registerSingleton("tapestryFilter", new TapestryFilter(registry));
 
         // 扫描当前包以及子包，找到 TapestryFilter 并对其进行后处理，完成 Tapestry 框架的初始化
-
+        /* 改为表述更为清晰的通过 beanFactory.registerSingleton()方式注入的方式
         String packagePath = this.getClass().getPackage().getName();
         log.debug("scan BeanDefinition in class path {}", packagePath);
         ClassPathBeanDefinitionScanner scanner = new ClassPathBeanDefinitionScanner(applicationContext);
-        scanner.scan(packagePath);
+        scanner.scan(packagePath);*/
     }
 
 
