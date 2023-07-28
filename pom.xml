@@ -14,6 +14,7 @@
         <module>dubbo-admin</module>
         <module>dubbo-provider</module>
         <module>simple-project</module>
+        <module>in-module</module>
     </modules>
 
     <parent>

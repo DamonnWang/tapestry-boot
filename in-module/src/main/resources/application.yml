@@ -1,0 +1,8 @@
+tapestry:
+  integration:
+    appmodule: org.example.tapestry.in.services.AppModule
+  production-mode: false
+
+logging:
+  level:
+    org.example.tapestry.in.config.tapestry: debug
